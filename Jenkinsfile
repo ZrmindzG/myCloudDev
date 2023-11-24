@@ -6,13 +6,13 @@ agent any
 
 tools{
 maven 'maven_3.9.4'
-
+}
     stages {
         stage('Code Compilation') {
             steps {
-                echo 'code compilation is progress'
+                echo 'code compilation is progress!'
                 sh 'mvn clean'
-                echo 'code compilation is suessfully completed'
+                echo 'code compilation is suessfully completed!'
 
             }
         }
@@ -31,5 +31,4 @@ maven 'maven_3.9.4'
             }
         }
     }
-}
 }
