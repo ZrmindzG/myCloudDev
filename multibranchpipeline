@@ -1,0 +1,15 @@
+pipeline {
+  agentany
+   parameters{
+     stringname(name: "maven_version",  defaultvalue:'3.6.3',  description:'pass the version maven')
+	 
+	 }
+	 stages{
+	    stage('download maven'){
+		 step{
+		    sh 'cd/var/lib/jenkins/'
+			sh 'sudo wget apache-maven-$maven_version-bin.tar.gz'    
+		 }
+   }
+   }
+   }
