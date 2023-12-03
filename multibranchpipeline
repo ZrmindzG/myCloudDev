@@ -8,7 +8,7 @@ pipeline {
 	    stage('download maven'){
 		 step{
 		    sh 'cd/var/lib/jenkins/'
-			sh 'sudo wget apache-maven-$maven_version-bin.tar.gz'    
+			sh 'sudo wget apache-maven-${maven_version}-bin.tar.gz'    
 		 }
    }
    }
