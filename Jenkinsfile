@@ -33,8 +33,8 @@ maven 'maven_3.9.4'
 		stage('Building and tag docker image')
                steps {
                echo ‘Starting building images’
-               sh ‘docker build -t omprasad24/omprasaddevops.’
-               sh ‘docker build -t makemytrip-ms’
+               sh ‘docker build -t omprasaddevops/yatra-ms .’
+               sh ‘docker build -t yatra-ms .’
                echo ‘completed building images’
               }
              }
