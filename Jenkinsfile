@@ -30,7 +30,7 @@ maven 'maven_3.9.4'
                 echo 'WAR artifact created successfully'
             }
         }
-		stage(‘Building & Tag Docker Image’)
+		stage(‘Building and Tag Docker Image’)
              {
                steps{
                echo ‘Starting building images’
