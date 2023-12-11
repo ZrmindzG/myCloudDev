@@ -38,34 +38,34 @@ maven 'maven_3.9.4'
                echo 'completed building images'
               }
              }
-        stage(‘docker image scanning’)
+        stage('docker image scanning')
              {
                steps{
-             echo ‘docker images scanning’
-             sh ‘java -version’
-             echo ‘images scanning started’
+             echo 'docker images scanning'
+             sh 'java -version'
+             echo 'images scanning started'
              }
              }
-        stage(‘docker push to docker hub’)
+        stage('docker push to docker hub')
              {
           steps{
            script{
-             withCredentials([string(credentialsId: ‘dockerhubCred’, variable: ‘dockerhubCred’)]){
-             sh ‘docker login docker.io. -u omprasaddevops -p ${dockerhubCred}’
+             withCredentials([string(credentialsId: 'dockerhubCred', variable: 'dockerhubCred')]){
+             sh 'docker login docker.io. -u omprasaddevops -p ${dockerhubCred}'
              echo “Push Docker Image to DockerHub: In Progress”
-             sh ‘docker push omprasaddevops/makemytrip-ms:latest’
+             sh 'docker push omprasaddevops/makemytrip-ms:latest'
              echo “Push Docker Image to DockerHub : In Progress”
-             sh ‘whomi’
+             sh 'whomi'
 
 			}
              }
          }
 		 }
-       stage(‘Docker Image push to  Amazon ECR’)
+       stage('Docker Image push to  Amazon ECR')
      {
      steps{
        script{
-         withDockerRegistry([credentialsId:’ecr:ap-south-1:ecr-credentials’,url:"https://823776493639.dkr.ecr.ap-south-1.amazonaws.com"])
+         withDockerRegistry([credentialsId:'ecr:ap-south-1:ecr-credentials',url:"https://823776493639.dkr.ecr.ap-south-1.amazonaws.com"])
 		 sh """
 		 echo "list of docker images present in local"
 		 docker images
