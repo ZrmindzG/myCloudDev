@@ -30,9 +30,8 @@ maven 'maven_3.9.4'
                 echo 'WAR artifact created successfully'
             }
         }
-		stage(‘Building and Tag Docker Image’)
-             {
-               steps{
+		stage(‘Building Tag Docker Image’){
+               steps {
                echo ‘Starting building images’
                sh ‘docker build -t omprasad24/omprasaddevops.’
                sh ‘docker build -t makemytrip-ms’
