@@ -32,16 +32,20 @@ maven 'maven_3.9.4'
         }
 		stage(‘Building & Tag Docker Image’)
              {
+               steps{
                echo ‘Starting building images’
                sh ‘docker build -t omprasad24/omprasaddevops.’
                sh ‘docker build -t makemytrip-ms’
-               echo ‘complerated building images’
+               echo ‘completed building images’
               }
+             }
         stage(‘docker image scanning’)
              {
+               steps{
              echo ‘docker images scanning’
              sh ‘java -version’
              echo ‘images scanning started’
+             }
              }
         stage(‘docker push to docker hub’)
              {
