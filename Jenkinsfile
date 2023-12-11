@@ -37,30 +37,27 @@ maven 'maven_3.9.4'
                sh 'docker build -t yatra-ms .'
                echo 'completed building images'
               }
-             }
+
         stage('docker image scanning')
              {
-               steps{
+             steps{
              echo 'docker images scanning'
              sh 'java -version'
              echo 'images scanning started'
              }
              }
         stage('docker push to docker hub')
-             {
-          steps{
-           script{
-             withCredentials([string(credentialsId: 'dockerhubCred', variable: 'dockerhubCred')]){
+              steps{
+			    script{
+			 withCredentials([string(credentialsId: 'dockerhubCred', variable: 'dockerhubCred')]){
              sh 'docker login docker.io. -u omprasaddevops -p ${dockerhubCred}'
              echo “Push Docker Image to DockerHub: In Progress”
              sh 'docker push omprasaddevops/makemytrip-ms:latest'
              echo “Push Docker Image to DockerHub : In Progress”
              sh 'whomi'
-
-			}
-             }
-         }
+		    }
 		 }
+		}
        stage('Docker Image push to  Amazon ECR')
      {
      steps{
@@ -77,5 +74,6 @@ maven 'maven_3.9.4'
          echo “push docker Image to ECR : Completed”
         }
       }
+   }
    }
 }
