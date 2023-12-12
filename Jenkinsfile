@@ -57,6 +57,23 @@ maven 'maven_3.9.4'
             		 }
                  }
              }
+             stage('Docker Image push to  Amazon ECR'){
+                      steps{
+                      script{
+                      withDockerRegistry([credentialsId:'ecr:ap-south-1:ecr-credentials',url:"https://823776493639.dkr.ecr.ap-south-1.amazonaws.com"]){
+                       sh """
+                       echo "list of docker images present in local"
+                       docker images
+                       echo “tagging the dokcer image: In progress”
+                       docker tag makemytrip-ms:latest 823776493639.dkr.ecr.ap-south-1.amazonaws.com/dockerrepo/makemytrip-ms:latest
+                       echo ”tagging the docker Image: Completed”
+                       echo “push docker image to ECR : In progress”
+                       docker push part of 823776493639.dkr.ecr.ap-south-1.amazonaws.com/dockerrepo/makemytrip-ms:latest
+                       echo “push docker Image to ECR : Completed”
+                     }
+                   }
+                 }
+             }
         }
   }
 
