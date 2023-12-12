@@ -37,6 +37,6 @@ maven 'maven_3.9.4'
                echo 'completed building images'
               }
         }
-
-}
+    }
+  }
 
