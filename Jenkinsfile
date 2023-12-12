@@ -31,12 +31,19 @@ maven 'maven_3.9.4'
         }
 		stage('Building and tag docker image'){
                steps {
-               echo ‘Starting building images’
+               echo 'Starting building images'
                sh 'docker build -t omprasaddevops/yatra-ms .'
                sh 'docker build -t yatra-ms .'
                echo 'completed building images'
               }
         }
+        stage('docker image scanning'){
+                 steps{
+                  echo 'docker images scanning'
+                  sh 'java -version'
+                  echo 'images scanning started'
+                     }
+            }
     }
   }
 
