@@ -13,7 +13,6 @@ maven 'maven_3.9.4'
                 echo 'code compilation is progress!'
                 sh 'mvn clean'
                 echo 'code compilation is suessfully completed!'
-
             }
         }
         stage('Code QA execution') {
@@ -74,5 +73,4 @@ maven 'maven_3.9.4'
         }
       }
      }
-
- }
+}
