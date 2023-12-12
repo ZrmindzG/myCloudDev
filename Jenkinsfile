@@ -43,10 +43,10 @@ maven 'maven_3.9.4'
              sh 'java -version'
              echo 'images scanning started'
              }
-             }
+         }
         stage('docker push to docker hub'){
               steps{
-			    script{
+			  script{
 			  withCredentials([string(credentialsId: 'dockerhubCred', variable: 'dockerhubCred')])
               sh 'docker login docker.io. -u omprasaddevops -p ${dockerhubCred}'
               echo “Push Docker Image to DockerHub: In Progress”
@@ -59,8 +59,8 @@ maven 'maven_3.9.4'
 
         stage('Docker Image push to  Amazon ECR'){
          steps{
-       script{
-          withDockerRegistry([credentialsId:'ecr:ap-south-1:ecr-credentials',url:"https://823776493639.dkr.ecr.ap-south-1.amazonaws.com"])
+         script{
+         withDockerRegistry([credentialsId:'ecr:ap-south-1:ecr-credentials',url:"https://823776493639.dkr.ecr.ap-south-1.amazonaws.com"])
           sh """
           echo "list of docker images present in local"
           docker images
@@ -73,4 +73,5 @@ maven 'maven_3.9.4'
         }
       }
      }
+  }
 }
