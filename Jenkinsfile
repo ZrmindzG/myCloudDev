@@ -58,8 +58,7 @@ maven 'maven_3.9.4'
             }
 		 }
 		}
-        }
-       stage('Docker Image push to  Amazon ECR'){
+        stage('Docker Image push to  Amazon ECR'){
          steps{
        script{
          withDockerRegistry([credentialsId:'ecr:ap-south-1:ecr-credentials',url:"https://823776493639.dkr.ecr.ap-south-1.amazonaws.com"]){
@@ -76,3 +75,4 @@ maven 'maven_3.9.4'
       }
      }
    }
+}
