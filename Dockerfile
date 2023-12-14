@@ -1,6 +1,5 @@
-FROM tomcat:9.0.52-jre11-openjdk-slim
-COPY build./target/makemytrip*.jar /usr/local/tomcat/webapps
+FROM tomcat:latest
+WORKDIR /usr/local/tomcat/webapps
+COPY target/makemytrip*.jar .
 EXPOSE 8080
-USER makemytrip
-WORKDIR build/usr/local/tomcat/webapps
-CMD  ["catalina.sh","run"]
+CMD ["java", "-jar", "makemytrip*.jar"]
