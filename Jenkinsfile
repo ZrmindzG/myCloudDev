@@ -77,12 +77,13 @@ maven 'maven_3.9.4'
              stage('upload the docker image to nexus'){
                  steps{
                  scripts{
-                 withCredentials([usernamePassword(credentialsId:'nexcred',usernameVariable:'USERNAME',passwordVariable:'PASSWORD'){
+                 withCredentials([usernamePassword(credentialsId:'nexcred',usernameVariable:'USERNAME',passwordVariable:'PASSWORD')]){
                  sh 'http://15.207.106.202:8081/repository/makemytrip-ms/ -u admin p ${PASSWORD}'
-                 echo 'puch docker image to nexus: In progress'
+                 echo 'push docker image to nexus: In progress'
                  sh 'docker tag makemytrip-ms 15.207.106.202:8085/makemytrip-ms:latest'
                  sh 'docker push 15.207.106.202:8085/makemytrip-ms'
                  echo 'push docker image to nexus: completed'
+
                 }
             }
        }
