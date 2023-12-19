@@ -83,9 +83,9 @@ maven 'maven_3.9.4'
                  sh 'docker tag makemytrip-ms 15.207.106.202:8085/makemytrip-ms:latest'
                  sh 'docker push 15.207.106.202:8085/makemytrip-ms'
                  echo 'push docker image to nexus: completed'
-                  }
                 }
              }
-         }
-      }
+          }
+       }
+    }
 
