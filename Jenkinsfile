@@ -48,7 +48,7 @@ maven 'maven_3.9.4'
                           steps{
             			  script{
             			  withCredentials([string(credentialsId: 'dockerhubcred', variable: 'dockerhubCred')]){
-                          sh 'docker login docker.io. -u ommprasad24@gmail.com -p ${dockerhubcred}'
+                          sh 'docker login docker.io. -u omprasaddevops -p ${dockerhubcred}'
                           echo “Push Docker Image to DockerHub: In Progress”
                           sh 'docker push omprasaddevops/makemytrip-ms:latest'
                           echo “Push Docker Image to DockerHub : In Progress”
