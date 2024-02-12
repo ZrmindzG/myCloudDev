@@ -51,10 +51,10 @@ maven 'maven_3.9.4'
                        sh """
                        echo "list of docker images present in local"
                        echo “tagging the dokcer image: In progress”
-                       docker tag my_image:latest 823776493639.dkr.ecr.ap-south-1.amazonaws.com/dockerrepo/makemytrip-ms:latest
+                       docker tag image:latest 823776493639.dkr.ecr.ap-south-1.amazonaws.com/dockerrepo/makemytrip-ms:v2
                        echo ”tagging the docker Image: Completed”
                        echo “push docker image to ECR : In progress”
-                       docker push part of 823776493639.dkr.ecr.ap-south-1.amazonaws.com/dockerrepo/makemytrip-ms:my_image
+                       docker push part of 823776493639.dkr.ecr.ap-south-1.amazonaws.com/dockerrepo/makemytrip-ms:v2
                        echo “push docker Image to ECR : Completed”
                        """
                      }makemytrip-ms
