@@ -57,7 +57,7 @@ maven 'maven_3.9.4'
                        docker push part of 823776493639.dkr.ecr.ap-south-1.amazonaws.com/dockerrepo/makemytrip-ms:latest
                        echo “push docker Image to ECR : Completed”
                        """
-                     }makemytrip-ms
+                     }
                    }
                  }
              }
